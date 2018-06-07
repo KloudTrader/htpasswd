@@ -1,14 +1,14 @@
 package htpasswd
 
 import (
-	"crypto/sha1"
+	"crypto/sha512"
 	"encoding/base64"
 
 	"golang.org/x/crypto/bcrypt"
 )
 
 func hashSha(password string) string {
-	s := sha1.New()
+	s := sha512.New()
 	s.Write([]byte(password))
 	passwordSum := []byte(s.Sum(nil))
 	return base64.StdEncoding.EncodeToString(passwordSum)
