@@ -11,7 +11,8 @@ func hashSha(password string) string {
 	// s.Write([]byte(password))
 	// passwordSum := []byte(s.Sum(nil))
 	// return base64.StdEncoding.EncodeToString(passwordSum)
-	output, _ := exec.Command("mkpasswd", []string{"-m", "sha-512", password}).Output()
+	args := []string{"-m", "sha-512", password}
+	output, _ := exec.Command("mkpasswd", args).Output()
 	return string(output)
 }
 
