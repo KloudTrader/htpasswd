@@ -61,7 +61,6 @@ func (hp HashedPasswords) SetPassword(name, password string, hashAlgorithm HashA
 	case HashBCrypt:
 		hash, err = hashBcrypt(password)
 	case HashSHA:
-		prefix = "{SHA}"
 		hash = hashSha(password)
 	}
 	if err != nil {
