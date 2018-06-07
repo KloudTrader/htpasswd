@@ -6,7 +6,7 @@ If you want to authenticate against a htpasswd file use something like https://g
 
 ## Supported hashing algorithms:
 
-- sha (do not use except for legacy support situations)
+- sha-512 (requires mkpasswd to be installed)
 - bcrypt
 
 ## This is what you can
